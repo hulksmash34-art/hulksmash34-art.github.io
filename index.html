@@ -799,7 +799,7 @@
     return COINS[f] ? '<img class="coin" src="' + COINS[f] + '" alt="" draggable="false">' : icon(key);
   }
   function esc(s) {
-    return String(s).replace(/&/g, "&").replace(/</g, "<").replace(/>/g, ">").replace(/"/g, """);
+    var A = String.fromCharCode(38); return String(s).replace(/&/g, A + "amp;").replace(/</g, A + "lt;").replace(/>/g, A + "gt;").replace(/"/g, A + "quot;");
   }
 
   root.querySelectorAll("[data-icon]").forEach(function (el) {
